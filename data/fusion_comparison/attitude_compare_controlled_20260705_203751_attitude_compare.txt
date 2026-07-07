@@ -1,0 +1,15 @@
+Attitude algorithm comparison
+
+source: D:\chan ganqi paper\sensor_fusion_nogps_vscode\data\attitude_compare_controlled_20260705_203751.csv
+rows: 546
+duration_s: 59.950
+
+comp_roll: mean=5.390549, std=7.493112, span=55.888000 deg
+mahony_roll: mean=4.172685, std=8.670876, span=54.046000 deg
+mahony_minus_comp_roll: mean=-1.217864, std=5.224297, span=36.985000 deg
+comp_pitch: mean=-1.302454, std=12.896487, span=78.116000 deg
+mahony_pitch: mean=-6.322808, std=13.788947, span=84.735000 deg
+mahony_minus_comp_pitch: mean=-5.020353, std=3.160795, span=20.596000 deg
+yaw_tilt: mean=182.189643, std=21.270715, span=114.903000 deg
+mahony_yaw: mean=178.053973, std=14.800970, span=78.482000 deg
+mahony_minus_yaw_tilt: mean=-4.135670, std=24.865293, span=169.733000 deg

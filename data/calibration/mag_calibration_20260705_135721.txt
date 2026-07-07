@@ -1,0 +1,28 @@
+HMC5883L ellipsoid calibration
+
+source: D:\chan ganqi paper\sensor_fusion_nogps_vscode\data\mag_rotate_20260705_135521.csv
+samples: 1046
+target_uT: 50.000
+span_uT: 86.238, 87.064, 84.312
+
+static const float MAG_C[3] = {
+    2.400530854f,
+    -2.147828020f,
+    0.932409035f,
+};
+
+static const float MAG_W[3][3] = {
+    {1.204914819f, 0.010272167f, 0.032007659f},
+    {0.010272167f, 1.152066356f, 0.003754350f},
+    {0.032007659f, 0.003754350f, 1.220156935f},
+};
+
+Norm summary:
+raw_mean_uT: 44.938
+raw_std_uT: 3.636
+cal_mean_uT: 51.690
+cal_std_uT: 2.114
+cal_min_uT: 45.611
+cal_max_uT: 56.466
+
+Result: CHECK

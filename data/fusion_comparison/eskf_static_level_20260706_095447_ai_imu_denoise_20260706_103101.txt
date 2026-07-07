@@ -1,0 +1,30 @@
+AI-enhanced IMU denoise experiment
+
+source: data\eskf_static_level_20260706_095447.csv
+rows: 727
+train_rows: 508
+validation_rows: 219
+model: tiny 1D convolution ridge denoiser, window=21
+hybrid: 1D convolution output followed by first-order Kalman smoothing
+weak clean target: moving_average(window=101)
+
+Validation summary:
+ax_g: raw_std=0.005362, lowpass_std=0.002159, ai_std=0.000767, hybrid_std=0.000747, lowpass_gain=7.902 dB, ai_gain=16.889 dB, hybrid_gain=17.125 dB
+ay_g: raw_std=0.003324, lowpass_std=0.000922, ai_std=0.000402, hybrid_std=0.000369, lowpass_gain=11.135 dB, ai_gain=18.340 dB, hybrid_gain=19.085 dB
+az_g: raw_std=0.005361, lowpass_std=0.001691, ai_std=0.000592, hybrid_std=0.000545, lowpass_gain=10.021 dB, ai_gain=19.135 dB, hybrid_gain=19.850 dB
+gx_dps: raw_std=0.054782, lowpass_std=0.016048, ai_std=0.013129, hybrid_std=0.013081, lowpass_gain=10.664 dB, ai_gain=12.408 dB, hybrid_gain=12.440 dB
+gy_dps: raw_std=0.066766, lowpass_std=0.015156, ai_std=0.007388, hybrid_std=0.006801, lowpass_gain=12.879 dB, ai_gain=19.120 dB, hybrid_gain=19.840 dB
+gz_dps: raw_std=0.042308, lowpass_std=0.009094, ai_std=0.007052, hybrid_std=0.007325, lowpass_gain=13.353 dB, ai_gain=15.562 dB, hybrid_gain=15.232 dB
+
+accel_mean_lowpass_snr_gain_db: 9.686
+accel_mean_ai_snr_gain_db: 18.121
+accel_mean_hybrid_snr_gain_db: 18.687
+gyro_mean_lowpass_snr_gain_db: 12.299
+gyro_mean_ai_snr_gain_db: 15.697
+gyro_mean_hybrid_snr_gain_db: 15.837
+
+Judgement:
+This validates static IMU denoising, 1D convolution denoise, and 1D convolution + first-order Kalman hybrid denoise.
+The inertial-position drift target is intentionally not evaluated in this no-GPS version because no trajectory ground truth was collected.
+
+Saved denoised CSV: data\eskf_static_level_20260706_095447_ai_imu_denoise_20260706_103101.csv

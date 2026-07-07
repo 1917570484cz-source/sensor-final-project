@@ -1,0 +1,42 @@
+Six-position accelerometer calibration
+
+Position means:
+01 +Z: -0.016126039, 0.016210641, 0.965102255
+02 -Z: -0.011265549, -0.027313373, -1.055375255
+03 +X: 0.987473856, 0.024840150, -0.041159216
+04 -X: -1.010734157, -0.031999974, -0.050063229
+05 +Y: -0.043026203, 0.994705477, -0.053380608
+06 -Y: 0.013304837, -1.002570693, -0.033534993
+
+Model: raw = A * true + C_BIAS; corrected = A_INV * (raw - C_BIAS)
+
+static const float A_INV[3][3] = {
+    {1.000085932f, 0.028224218f, 0.001797831f},
+    {-0.028359154f, 1.000349137f, -0.021617191f},
+    {-0.004685815f, 0.009701288f, 0.989644763f},
+};
+
+static const float C_BIAS[3] = {
+    -0.013395542f,
+    -0.004354629f,
+    -0.044735174f,
+};
+
+A matrix:
+0.999104007, -0.028165520, -0.002430245
+0.028420062, 0.998638085, 0.021762007
+0.004452007, -0.009922807, 1.010238755
+
+Errors:
+01 +Z: before_norm_err=34.627 mg, after_vector_err=1.292 mg, corrected=(-0.000335, -0.001180, 0.999593)
+02 -Z: before_norm_err=55.789 mg, after_vector_err=1.292 mg, corrected=(-0.000335, -0.001180, -1.000407)
+03 +X: before_norm_err=11.357 mg, after_vector_err=2.120 mg, corrected=(1.001786, 0.000744, -0.000868)
+04 -X: before_norm_err=12.479 mg, after_vector_err=2.120 mg, corrected=(-0.998214, 0.000744, -0.000868)
+05 +Y: before_norm_err=2.934 mg, after_vector_err=1.980 mg, corrected=(-0.001451, 1.000436, 0.001275)
+06 -Y: before_norm_err=3.220 mg, after_vector_err=1.980 mg, corrected=(-0.001451, -0.999564, 0.001275)
+
+Mean before norm error: 20.068 mg
+Mean after vector error: 1.798 mg
+Max after vector error: 2.120 mg
+Target: 2.000 mg
+Result: PASS

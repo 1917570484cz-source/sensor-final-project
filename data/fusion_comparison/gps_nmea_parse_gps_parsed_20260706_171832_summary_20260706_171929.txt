@@ -1,0 +1,22 @@
+GPS NMEA parse summary
+
+parsed_csv: data\gps_nmea_parse_gps_parsed_20260706_171832.csv
+total_parsed_rows: 79
+gga_rows: 39
+rmc_rows: 40
+checksum_ok_rows: 79
+checksum_ok_ratio: 100.00 %
+gga_fixed_rows: 39
+rmc_valid_rows: 40
+
+Position and quality statistics
+lat_mean_deg: 26.03045865
+lon_mean_deg: 119.19306637
+lat_min_max_deg: 26.03045082 / 26.03046227
+lon_min_max_deg: 119.19306183 / 119.19306946
+altitude_mean_std_m: 36.192 / 0.087
+satellites_mean_min_max: 12.31 / 11 / 13
+hdop_mean_min_max: 0.86 / 0.80 / 0.90
+
+Judgement:
+Firmware-side NMEA parsing is valid if GGA/RMC rows are present, checksum_ok_ratio is high, and GGA fix quality is greater than 0.

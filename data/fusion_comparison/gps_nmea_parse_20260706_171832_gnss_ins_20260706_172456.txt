@@ -1,0 +1,24 @@
+GNSS/INS loose coupling summary
+
+sensor_csv: data\gps_nmea_parse_20260706_171832.csv
+gps_parsed_csv: data\gps_nmea_parse_gps_parsed_20260706_171832.csv
+output_csv: data\gps_nmea_parse_20260706_171832_gnss_ins_20260706_172456.csv
+figure_svg: figures\gps_nmea_parse_20260706_171832_gnss_ins_20260706_172456.svg
+
+Model:
+state = [east_m, north_m, ve_mps, vn_mps]
+IMU acceleration is used for prediction with accel_gain=0.02; GPS position is used for Kalman measurement update.
+
+sensor_rows: 301
+gps_valid_updates_used: 79
+gps_residual_mean_m: 0.156
+gps_residual_rms_m: 0.208
+gps_residual_max_m: 0.825
+gps_position_spread_mean_m: 0.524
+fused_position_spread_mean_m: 0.555
+final_east_north_m: 0.078, 0.739
+final_velocity_mps: 0.0211, 0.0080
+
+Judgement:
+The loose-coupled GNSS/INS pipeline is complete and can run on the collected data.
+This static dataset verifies algorithm execution and GPS update stability; a walking/outdoor dataset is needed to evaluate trajectory accuracy.

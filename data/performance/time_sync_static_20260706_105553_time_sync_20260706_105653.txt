@@ -1,0 +1,23 @@
+Multi-sensor timestamp synchronization analysis
+
+source: data\time_sync_static_20260706_105553.csv
+rows: 364
+valid_sync_rows: 364
+
+Definition:
+imu_dt_us/mag_dt_us/bmp_dt_us are completion timestamps relative to loop_start_us.
+imu_mag_dt_us and imu_bmp_dt_us are inter-sensor timestamp offsets in the same fusion loop.
+
+Summary, unit: us
+metric,mean,std,min,p95,max,span
+imu_dt_us,1969.97,4.84,1958.00,1977.00,1979.00,21.00
+mag_dt_us,3576.56,36.57,3565.00,3580.00,4064.00,499.00
+bmp_dt_us,4883.85,36.87,4836.00,4886.00,5374.00,538.00
+imu_mag_dt_us,1606.59,36.55,1602.00,1608.00,2097.00,495.00
+imu_bmp_dt_us,2913.88,36.91,2871.00,2916.00,3407.00,536.00
+
+max_inter_sensor_offset_us: 3407.00
+Judgement:
+The firmware uses esp_timer_get_time() as a common monotonic clock and records each sensor completion timestamp in the same loop.
+This verifies software timestamp alignment among IMU, magnetometer, and BMP280 in the no-GPS version.
+It is not GPS/IMU microsecond PPS synchronization because GPS is intentionally disabled in this version.

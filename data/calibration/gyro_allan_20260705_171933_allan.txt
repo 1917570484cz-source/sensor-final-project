@@ -1,0 +1,28 @@
+Gyro Allan deviation analysis
+
+source: D:\chan ganqi paper\sensor_fusion_nogps_vscode\data\gyro_allan_20260705_171933.csv
+rows: 32728
+duration_s: 3599.970
+sample_dt_s: 0.110000
+sample_rate_hz: 9.091
+
+static gyro summary:
+gx_raw_dps: mean=2.356795160 dps, std=0.050708041 dps
+gx_dps: mean=0.742468577 dps, std=0.046029276 dps
+gy_raw_dps: mean=-0.052028227 dps, std=0.049056721 dps
+gy_dps: mean=0.584734688 dps, std=0.056716435 dps
+gz_raw_dps: mean=0.352233859 dps, std=0.041520174 dps
+gz_dps: mean=-0.129689984 dps, std=0.045423990 dps
+
+Allan summary:
+gx_raw_dps: ARW=0.922366 deg/sqrt(hr), bias_instability=25.000912 deg/hr, min_adev=0.004611279 dps at tau=35.090s
+gy_raw_dps: ARW=0.968304 deg/sqrt(hr), bias_instability=16.329889 deg/hr, min_adev=0.003011957 dps at tau=144.980s
+gz_raw_dps: ARW=0.834577 deg/sqrt(hr), bias_instability=7.349978 deg/hr, min_adev=0.001355663 dps at tau=326.480s
+gx_dps: ARW=0.922147 deg/sqrt(hr), bias_instability=19.943433 deg/hr, min_adev=0.003678456 dps at tau=28.600s
+gy_dps: ARW=0.968859 deg/sqrt(hr), bias_instability=26.718386 deg/hr, min_adev=0.004928058 dps at tau=15.620s
+gz_dps: ARW=0.835068 deg/sqrt(hr), bias_instability=18.347894 deg/hr, min_adev=0.003384167 dps at tau=28.600s
+
+Compensation improvement:
+gx: bias_improvement=1.254x, arw_improvement=1.000x
+gy: bias_improvement=0.611x, arw_improvement=0.999x
+gz: bias_improvement=0.401x, arw_improvement=0.999x

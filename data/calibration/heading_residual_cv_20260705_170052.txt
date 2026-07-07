@@ -1,0 +1,34 @@
+Heading residual compensation cross validation
+
+measurement: yaw_flat_deg
+harmonic_order: 3
+train_files:
+- data\heading_12dir_20260705_151120.csv
+- data\heading_12dir_20260705_153205.csv
+validation_files:
+- data\heading_12dir_20260705_162311_best_re300_165648.csv
+
+coefficients_deg:
+offset=-97.541703633
+sin1=2.258277347
+cos1=-5.045222454
+sin2=2.812112901
+cos2=-2.233074730
+sin3=1.497970942
+cos3=1.178828003
+
+static const float HEADING_RESIDUAL_COEF[] = {
+    -97.541703633f,
+    2.258277347f,
+    -5.045222454f,
+    2.812112901f,
+    -2.233074730f,
+    1.497970942f,
+    1.178828003f,
+};
+
+summary_deg:
+train_raw_rmse=97.699, train_raw_abs_mean=97.410, train_raw_abs_max=111.950
+train_corrected_rmse=5.633, train_corrected_abs_mean=3.846, train_corrected_abs_max=19.046
+valid_raw_rmse=98.525, valid_raw_abs_mean=98.386, valid_raw_abs_max=105.727
+valid_corrected_rmse=2.833, valid_corrected_abs_mean=1.907, valid_corrected_abs_max=6.940

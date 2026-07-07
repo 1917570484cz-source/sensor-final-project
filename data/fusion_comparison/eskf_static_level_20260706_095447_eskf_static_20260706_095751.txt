@@ -1,0 +1,25 @@
+ESKF static attitude experiment
+
+source: data\eskf_static_level_20260706_095447.csv
+rows used: 681
+settle_s: 5.000
+expected gravity axis: +z
+
+ESKF roll/pitch:
+roll mean/std/max_dev_from_mean: -0.693366 / 0.074643 / 0.302402 deg
+pitch mean/std/max_dev_from_mean: -2.067086 / 0.132308 / 0.477328 deg
+stability_rms: 0.151800 deg
+
+Reference check against expected gravity direction:
+gravity_angle_error mean/std/max: 2.182204 / 0.120159 / 2.466892 deg
+
+Comparison with firmware outputs:
+complementary roll std / pitch std: 0.049727 / 0.067965 deg
+mahony roll std / pitch std: 0.072164 / 0.147068 deg
+eskf roll std / pitch std: 0.074643 / 0.132308 deg
+
+1-sigma static precision: PASS (target std <= 0.200 deg)
+Max-deviation stability: CHECK (target max deviation <= 0.200 deg)
+Reference result: CHECK (target gravity angle max <= 0.200 deg; depends on fixture/table accuracy)
+
+Saved ESKF CSV: data\eskf_static_level_20260706_095447_eskf_static_20260706_095751.csv
